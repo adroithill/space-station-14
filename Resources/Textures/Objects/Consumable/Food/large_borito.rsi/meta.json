@@ -1,0 +1,20 @@
+{
+    "version": 1,
+    "license": null,
+    "copyright": "Made by adroithill",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "largeborito"
+        },
+        {
+            "name": "largeborito-open"
+        },
+        {
+            "name": "largeborito-wrapper"
+        }
+    ]
+}
