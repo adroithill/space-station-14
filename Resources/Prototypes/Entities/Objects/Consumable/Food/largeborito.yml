@@ -1,0 +1,5 @@
+- type: entity
+  parent: BaseItem
+  name: large borito
+  description: Like normal boritos, but bigger!
+  
