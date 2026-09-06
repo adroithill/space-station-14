@@ -34,6 +34,8 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId DefaultNinjaRule = "NinjaSpawn";
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
 
+    private static readonly EntProtoId DefaultSaboteurRule = "SaboteurRule";
+
     // All antag verbs have names so invokeverb works.
     private void AddAntagVerbs(GetVerbsEvent<Verb> args)
     {
@@ -222,6 +224,21 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", ninjaName, Loc.GetString("admin-verb-make-space-ninja")),
         };
         args.Verbs.Add(ninja);
+
+        var saboteurName = Loc.GetString("admin-verb-text-make-saboteur");
+        Verb saboteur = new()
+        {
+            Text = saboteurName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "Syndicate"), // swap for your own icon later
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<ClockworkCultistRuleComponent>(targetPlayer, DefaultSaboteurRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", saboteurName, Loc.GetString("admin-verb-make-saboteur")),
+        };
+        args.Verbs.Add(clockworkCultist);
 
         if (HasComp<HumanoidProfileComponent>(args.Target)) // only humanoids can be cloned
             args.Verbs.Add(paradox);

@@ -1,0 +1,19 @@
+- type: antag
+  id: ClockworkCultist
+  name: clockwork-cultist-title
+  objective: roles-antag-clockwork-cultist-objective
+  antagonist: true
+  setPreference: true
+
+- type: antagSpecifier
+  id: ClockworkCultist
+  prefRoles:
+  - ClockworkCultist
+  min: 1
+  max: 1
+  playerRatio: 10
+  mindRoles:
+  - MindRoleClockworkCultist
+  briefing:
+    text: ClockworkCultist-role-greeting
+    color: "#5e9cff"

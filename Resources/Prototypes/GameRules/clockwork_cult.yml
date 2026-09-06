@@ -1,0 +1,10 @@
+- type: entity
+  id: SaboteurRule
+  parent: BaseGameRule
+  components:
+  - type: GameRule
+    minPlayers: 5
+  - type: AntagSelection
+    # the field that lists which antagSpecifier IDs this rule uses
+    # goes here — see note below
+  - type: SaboteurRule

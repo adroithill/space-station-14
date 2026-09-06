@@ -355,3 +355,12 @@
   - type: ChangelingRole
   - type: RoleBriefing
     briefing: changeling-briefing
+
+# Clockwork Cultist
+- type: entity
+  id: MindRoleClockworkCultist
+  parent: BaseMindRoleAntag
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: MindRole
+    antagPrototype: ClockworkCultist
